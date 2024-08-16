@@ -1,1 +1,87 @@
-# proc-stuff
+**Stuff to improve/evaluate in proc**
+
+Priority
+
+1.  Bug! **Disalowed Decryptor**. Do not allow the current user to try to decrypt a content the user is not a recipient of. Currently, this is even causing a js error (Uncaught (in promise) Error: readPrivateKey: must pass options object containing `armoredKey` or `binaryKey`.) and prevents the user to correctly edit a form with content for which the user does not have accees to. The problem only happens in edit mode, in view mode it behaves well, displaying only the labels of the content.
+
+2.  Bug! **Innefective API tool**. Fix changeProcElementSettings. It is capable of changing the elemet settings array, but the changed value will not take effect once the element is already rendered at this moment.
+
+3.  Bug! **Failed Text Decryption**. When a text field is decrypted and re-encrypted, the decryption of the NEXT text field does not work. The password dialog opens empty (despite of cache being enabled or not), and yet the typed in password will not work. It will only work when the fields are first, all of them, decrypted, and then encrypted one by one or if the fields were already decrypted at current page load. (Workaround: set the text field to automatically decrypt the next text field by checking "Trigger decryption of another encrypted field").
+
+4.  **Be Smart**. Do not show Decrypt if the current user is not a recipient.
+
+5.  Bug! **Workflow Failure**. When a user is not the author of a proc file, the simple update button should instead create a new proc entity. Currently it is just going to fail.
+
+6.  Bug! **Fresh Install**. When fresh installing, proc will try to use a <private://> stream wrapper. And this does not exist in a Drupal fresh installation. When trying to encrypt, and error will happen: "12/Aug 17:37 php Error Drupal\Core\File\Exception\InvalidStreamWrapperException: Invalid stream wrapper: private://proc/lkrZQf-eHc9Tnmn4ZeyRrQB-_V1IxexQu-596oXSTMg.json in Drupal\file\FileRepository→writeData()"
+
+Security coverage requirement
+
+1.  Add examples of usage (private message, internal communication, static list of recipients, perhaps as exported configurations as submodules).
+
+2.  Consider applying this: "Writing a conceptual overview of the purpose of the code and its general methodology in the @file section is helpful to future developers. It may even help designing the code during the planning stages."
+
+3.  Mention in README.md hooks and plugins.
+
+4.  Check how/if proc permissions are being used. Use field_permission_example as reference.
+
+5.  Verify access to view the label. Operation: 'view label'
+
+    Encryption seems not to be working under Firefox (129.0 (64-bit).
+
+6.  <https://www.drupal.org/docs/drupal-apis/routing-system/structure-of-routes> → **_csrf_token**: should be used and set to 'TRUE' for any URLs that perform actions or operations that do not use a form callback. See [Access checking on routes](https://drupal.org/node/3048359) for details.
+
+7.  Create access check services as per: "Additionally, you have to add the access class as a service by adding an entry in example.services.yml." (<https://www.drupal.org/docs/8/api/routing-system/access-checking-on-routes/advanced-route-access-checking>)
+
+8.  Consider validating the proc ID slugs in routes by using regular expressions, as it is shown here: <https://www.drupal.org/node/2399239> (`name``:``'[a-zA-Z]+'`)
+
+9.  Restrict anonymous user access to [/api/proc/getpubkey/1,2,3/user_id](http://127.0.0.1:8181/proclab/proclab/web/api/proc/getpubkey/1,2,3/user_id) by also requiring 'View proc entity' permission. Implement it with another Access class and service.
+
+10. Review effectiveness of switching published/unpublished proc content. Currently this difference is not being used for any explicit visibility control.
+
+11. Implement *hook_update_last_removed* in .install for removing the empty hook update.
+
+12. Check access to admin/content/procs.
+
+TABLE of Permissions:
+
+proc/<proc ID>|Administrator|
+
+General improvements
+
+1.  Improve setMetadataMessage. It has too many arguments. Some can be put toghether as values of an array.
+
+2.  Extract and add more generic methods to ProcOpFormBase (it contains only one base method, currently).
+
+3.  Unify "'library' => [" (used 5 times, currently) in a single base method to be called from everywhere it is used.
+
+4.  Check if settings summary of the widget covers all settings available in the widget.
+
+5.  Check if global configuration "Enable local password cache for fields" is being used. If it is not, remove it.
+
+6.  Test adequacy for the 3 cardinality types (unlimited, limited to 1, limited to 1+) and the 2 field types (files, text) and other less used combinations of configurations.
+
+7.  Rewrite this message using megabytes instead of bytes: "Maximum file size allowed: 2000000 bytes".
+
+8.  If a proc field does not have recipients defined, create an error message for the user and a log it. Currently it will just return a "403 (Forbidden)" in the console because of trying to access "proc/add/?...". The error caused therefore by trying to encrypt for no one.
+
+9.  Create js module for not repeating "const i in navigator" (it happens currently twice)
+
+10. Move "= $module_path . '/templates/proc" to a helper method removing repeated code.
+
+11. "Encrypt" checkbox label in the widget for text fields should also overwrite the global configuration for the encrypt button label. Currently, this works only for the "Encrypt" button in proc **file** fields.
+
+12. Define better permission for the path "/proc/{proc}/details". Currently it is controlled as "_entity_access: 'proc.view'".
+
+13. Move _proc_get_csv_argument functionality out of functions file. Consider putting it in the FormBase class.
+
+Re-encryption (encryption update)
+
+1.  Create a new multivalued field for wished set of recipients. **done**
+
+2.  Allow this field (Wished recipient name) to be changed at the edit form of the proc entity **done**
+
+3.  Create a new route *proc*/update/<proc IDs CSV> and its ad hoc JS library (based on d7 **proc.update_protected.js**) for performing the re-encryption of the PROCs listed at <proc IDs CSV> according to the wished lists of recipients in each Proc.
+
+For giving back to the Community
+
+1\. Report typo error in example module: "In drupal, a route is a path ***which is returns** *some response." should be "In drupal, a route is a path ***which returns*** some response.".
