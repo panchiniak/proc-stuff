@@ -14,6 +14,8 @@ Priority
 
 6.  Bug! **Fresh Install**. When fresh installing, proc will try to use a <private://> stream wrapper. And this does not exist in a Drupal fresh installation. When trying to encrypt, and error will happen: "12/Aug 17:37 php Error Drupal\Core\File\Exception\InvalidStreamWrapperException: Invalid stream wrapper: private://proc/lkrZQf-eHc9Tnmn4ZeyRrQB-_V1IxexQu-596oXSTMg.json in Drupal\file\FileRepository→writeData()"
 
+7. Bug! Repeated Proc ID Cache Invalidation Failure. Steps to reproduce: 1. Install proc (having no proc table before), 2. Create keys, they will be given key id number #1. 3. Encrypt a content (it will be given proc ID number #2), 4. Succesfully decrypt the content. 5. Now, uninstall proc, removing the proc table and without clearing the browser cache and using the same browser, repeat 1-3, 6. Try to decrypt the proc with ID number #2 and get the error “Unable to decrypt the content. Make sure you have entered the right passphrase.” in the browser’s console. Workaround: clear browser cache. 
+
 Security coverage requirement
 
 1.  Add examples of usage (private message, internal communication, static list of recipients, perhaps as exported configurations as submodules).
