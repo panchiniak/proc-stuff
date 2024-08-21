@@ -1,6 +1,6 @@
 **Stuff to improve/evaluate in proc**
 
-Priority
+*Priority*
 
 1.  Bug! **Disalowed Decryptor**. Do not allow the current user to try to decrypt a content the user is not a recipient of. Currently, this is even causing a js error (Uncaught (in promise) Error: readPrivateKey: must pass options object containing `armoredKey` or `binaryKey`.) and prevents the user to correctly edit a form with content for which the user does not have accees to. The problem only happens in edit mode, in view mode it behaves well, displaying only the labels of the content.
 
