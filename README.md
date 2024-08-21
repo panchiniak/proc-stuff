@@ -16,7 +16,7 @@
 
 7. Bug! Repeated Proc ID Cache Invalidation Failure. Steps to reproduce: 1. Install proc (having no proc table before), 2. Create keys, they will be given key id number #1. 3. Encrypt a content (it will be given proc ID number #2), 4. Succesfully decrypt the content. 5. Now, uninstall proc, removing the proc table and without clearing the browser cache and using the same browser, repeat 1-3, 6. Try to decrypt the proc with ID number #2 and get the error “Unable to decrypt the content. Make sure you have entered the right passphrase.” in the browser’s console. Workaround: clear browser cache. 
 
-Security coverage requirement
+*Security coverage requirement*
 
 1.  Add examples of usage (private message, internal communication, static list of recipients, perhaps as exported configurations as submodules).
 
@@ -27,8 +27,6 @@ Security coverage requirement
 4.  Check how/if proc permissions are being used. Use field_permission_example as reference.
 
 5.  Verify access to view the label. Operation: 'view label'
-
-    Encryption seems not to be working under Firefox (129.0 (64-bit).
 
 6.  <https://www.drupal.org/docs/drupal-apis/routing-system/structure-of-routes> → **_csrf_token**: should be used and set to 'TRUE' for any URLs that perform actions or operations that do not use a form callback. See [Access checking on routes](https://drupal.org/node/3048359) for details.
 
@@ -44,11 +42,7 @@ Security coverage requirement
 
 12. Check access to admin/content/procs.
 
-TABLE of Permissions:
-
-proc/<proc ID>|Administrator|
-
-General improvements
+*General improvements*
 
 1.  Improve setMetadataMessage. It has too many arguments. Some can be put toghether as values of an array.
 
@@ -75,6 +69,8 @@ General improvements
 12. Define better permission for the path "/proc/{proc}/details". Currently it is controlled as "_entity_access: 'proc.view'".
 
 13. Move _proc_get_csv_argument functionality out of functions file. Consider putting it in the FormBase class.
+
+14. Consider adding a view with json output listing users with keuys and only users wuth keys for fast deployment as fetcher URL in proc fields.
 
 Re-encryption (encryption update)
 
