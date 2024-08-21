@@ -72,7 +72,7 @@
 
 14. Consider adding a view with json output listing users with keuys and only users wuth keys for fast deployment as fetcher URL in proc fields.
 
-Re-encryption (encryption update)
+*Re-encryption (encryption update)*
 
 1.  Create a new multivalued field for wished set of recipients. **done**
 
@@ -82,7 +82,6 @@ Re-encryption (encryption update)
 
 5.  Create a new route *proc*/update/<proc IDs CSV> and its ad hoc JS library (based on d7 **proc.update_protected.js**) for performing the re-encryption of the PROCs listed at <proc IDs CSV> according to the wished lists of recipients in each Proc.
  
-
-For giving back to the Community
+*For giving back to the Community*
 
 1\. Report typo error in example module: "In drupal, a route is a path ***which is returns** *some response." should be "In drupal, a route is a path ***which returns*** some response.".
