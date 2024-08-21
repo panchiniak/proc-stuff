@@ -84,6 +84,8 @@ Re-encryption (encryption update)
 
 3.  Create a new route *proc*/update/<proc IDs CSV> and its ad hoc JS library (based on d7 **proc.update_protected.js**) for performing the re-encryption of the PROCs listed at <proc IDs CSV> according to the wished lists of recipients in each Proc.
 
+4.  Store as metadata of a cipher proc the full URL that originated the set of recipoients.   
+
 For giving back to the Community
 
 1\. Report typo error in example module: "In drupal, a route is a path ***which is returns** *some response." should be "In drupal, a route is a path ***which returns*** some response.".
