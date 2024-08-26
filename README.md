@@ -78,9 +78,9 @@
 
 2.  Allow this field (Wished recipient name) to be changed at the edit form of the proc entity **done**
 
-3.  Store as metadata of a cipher proc the full URL that originated the set of recipoients.
+3.  Store as metadata of a cipher proc the full URL that originated the set of recipoients. **done**
 
-4.  Allow the decryption of multiple contents in standalone mode. This will be reused for the next item (5).
+4.  Allow the decryption of multiple contents in standalone mode. This will be reused for the next item (5). **wip**
 
 5.  Create a new route *proc*/update/<proc IDs CSV> and its ad hoc JS library (based on d7 **proc.update_protected.js**) for performing the re-encryption of the PROCs listed at <proc IDs CSV> according to the wished lists of recipients in each Proc.
  
