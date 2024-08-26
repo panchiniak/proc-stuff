@@ -82,11 +82,13 @@
 
 4.  Replace ProcController::extractProcIdsFromPath by ProcCsvTrait::getCsvArgument(). **wip**
 
-5.  Phaseout _get_recipient_ids(). 
+5.  Phaseout _get_recipient_ids(). **wip**
 
-6.  Allow the decryption of multiple contents in standalone mode. This will be reused for the next item (5). **wip**
+6.  Phaseout _proc_common_get_ciphers() **wip**
 
-7.  Create a new route *proc*/update/<proc IDs CSV> and its ad hoc JS library (based on d7 **proc.update_protected.js**) for performing the re-encryption of the PROCs listed at <proc IDs CSV> according to the wished lists of recipients in each Proc.
+7.  Allow the decryption of multiple contents in standalone mode. This will be reused for the next item (5). **wip**
+
+8.  Create a new route *proc*/update/<proc IDs CSV> and its ad hoc JS library (based on d7 **proc.update_protected.js**) for performing the re-encryption of the PROCs listed at <proc IDs CSV> according to the wished lists of recipients in each Proc.
  
 *For giving back to the Community*
 
