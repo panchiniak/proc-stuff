@@ -80,7 +80,7 @@
 
 3.  Store as metadata of a cipher proc the full URL that originated the set of recipoients. **done**
 
-4.  Replace ProcController::extractProcIdsFromPath by ProcCsvTrait::getCsvArgument(). **wip**
+4.  Replace ProcController::extractProcIdsFromPath by ProcCsvTrait::getCsvArgument(). **done**
 
 5.  Phaseout _get_recipient_ids(). **wip**
 
