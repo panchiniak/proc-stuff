@@ -84,7 +84,7 @@
 
 5.  Phaseout _get_recipient_ids(). **done**
 
-6.  Phaseout _proc_common_get_ciphers() **wip**
+6.  Phaseout _proc_common_get_ciphers() **done**
 
 7.  Phaseout isUserOwnerOrAdmin() **wip**
 
