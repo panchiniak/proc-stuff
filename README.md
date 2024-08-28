@@ -82,7 +82,7 @@
 
 4.  Replace ProcController::extractProcIdsFromPath by ProcCsvTrait::getCsvArgument(). **done**
 
-5.  Phaseout _get_recipient_ids(). **wip**
+5.  Phaseout _get_recipient_ids(). **done**
 
 6.  Phaseout _proc_common_get_ciphers() **wip**
 
