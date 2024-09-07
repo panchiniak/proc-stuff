@@ -16,7 +16,9 @@
 
 7. Bug! Repeated Proc ID Cache Invalidation Failure. Steps to reproduce: 1. Install proc (having no proc table before), 2. Create keys, they will be given key id number #1. 3. Encrypt a content (it will be given proc ID number #2), 4. Succesfully decrypt the content. 5. Now, uninstall proc, removing the proc table and without clearing the browser cache and using the same browser, repeat 1-3, 6. Try to decrypt the proc with ID number #2 and get the error “Unable to decrypt the content. Make sure you have entered the right passphrase.” in the browser’s console. Workaround: clear browser cache.
 
-8. Create unit tests.
+8. Bug! At the "admin/structure/types/manage/<type>/fields/add-field" every Entitty Reference Field type (Content, User, Profile, Taxonomy Term) appears with the description of the Proc Type: "An entity field containing a proc enabled entity reference".
+
+9. Create unit tests.
 
 *Security coverage requirement*
 
