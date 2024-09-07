@@ -6,7 +6,7 @@
 
 2.  Bug! **Innefective API tool**. Fix changeProcElementSettings. It is capable of changing the elemet settings array, but the changed value will not take effect once the element is already rendered at this moment.
 
-3.  Bug! **Failed Text Decryption**. When a text field is decrypted and re-encrypted, the decryption of the NEXT text field does not work. The password dialog opens empty (despite of cache being enabled or not), and yet the typed in password will not work. It will only work when the fields are first, all of them, decrypted, and then encrypted one by one or if the fields were already decrypted at current page load. (Workaround: set the text field to automatically decrypt the next text field by checking "Trigger decryption of another encrypted field").
+3.  Bug! **Failed Text/File Decryption**. When a text field is decrypted and re-encrypted, the decryption of the NEXT or PREVIOUS text/file field does not work. The password dialog opens empty (despite of cache being enabled or not), and yet the typed in password will not work (by clicking Open nothing happnes, and there is no error in the cosole). It will only work when the fields are first, all of them, decrypted, and then encrypted one by one or if the fields were already decrypted at current page load. (Workaround: set the text field to automatically decrypt the next text field by checking "Trigger decryption of another encrypted field").
 
 4.  **Be Smart**. Do not show Decrypt if the current user is not a recipient.
 
