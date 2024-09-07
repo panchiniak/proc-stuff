@@ -76,6 +76,8 @@
 
 14. Consider adding a view with json output listing users with keuys and only users wuth keys for fast deployment as fetcher URL in proc fields.
 
+15. Add a descryption to the "Type of identifier" field in the widget.
+
 *Re-encryption (encryption update)*
 
 1.  Create a new multivalued field for wished set of recipients. **done**
