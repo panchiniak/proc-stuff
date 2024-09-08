@@ -18,7 +18,7 @@
 
 8. Bug! At the "admin/structure/types/manage/<type>/fields/add-field" every Entitty Reference Field type (Content, User, Profile, Taxonomy Term) appears with the description of the Proc Type: "An entity field containing a proc enabled entity reference".
 
-9. Bug! TO: field is only working when there is also a CC field define.
+9. Bug! TO: field is only working when there is also a CC field define. **fixed**
 
 10. Create unit tests.
 
