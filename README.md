@@ -48,6 +48,10 @@
 
 12. Check access to admin/content/procs.
 
+13. Review the "_entity_access: 'proc.view'" for '/proc/{proc}/details'.
+
+14. Review the usage of ProcAccessControlHandler::checkAccess(). View, update and delete parameters must be passed with the route entry.
+
 *General improvements*
 
 1.  Improve setMetadataMessage. It has too many arguments. Some can be put toghether as values of an array.
