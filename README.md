@@ -30,7 +30,7 @@
 
 3.  Mention in README.md hooks and plugins.
 
-4.  Check how/if proc permissions are being used. Use field_permission_example as reference.
+4.  Check how/if proc permissions are being used. Use field_permission_example as reference. **Wip**
 
 5.  Verify access to view the label. Operation: 'view label'
 
