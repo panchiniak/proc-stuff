@@ -52,6 +52,8 @@
 
 14. Review the usage of ProcAccessControlHandler::checkAccess(). View, update and delete parameters must be passed with the route entry.
 
+15. Implement .view, .update and .delete operations for checking access. Currently they exist but they are not being used.
+
 *General improvements*
 
 1.  Improve setMetadataMessage. It has too many arguments. Some can be put toghether as values of an array.
