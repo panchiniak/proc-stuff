@@ -4,7 +4,7 @@
 
 1.  Bug! **Disalowed Decryptor**. Do not allow the current user to try to decrypt a content the user is not a recipient of. Currently, this is even causing a js error (Uncaught (in promise) Error: readPrivateKey: must pass options object containing `armoredKey` or `binaryKey`.) and prevents the user to correctly edit a form with content for which the user does not have accees to. The problem only happens in edit mode, in view mode it behaves well, displaying only the labels of the content.
 
-2.  Bug! **Innefective API tool**. Fix changeProcElementSettings. It is capable of changing the elemet settings array, but the changed value will not take effect once the element is already rendered at this moment.
+2.  Bug! **Innefective API tool**. Fix changeProcElementSettings. It is capable of changing the elemet settings array, but the changed value will not take effect once the element is already rendered at this moment. (Retest! It is possible that this is already fixed at version 10.1.81).
 
 3.  Bug! **Failed Text/File Decryption**. When a text field is decrypted and re-encrypted, the decryption of the NEXT or PREVIOUS text/file field does not work. The password dialog opens empty (despite of cache being enabled or not), and yet the typed in password will not work (by clicking Open nothing happnes, and there is no error in the cosole). It will only work when the fields are first, all of them, decrypted, and then encrypted one by one or if the fields were already decrypted at current page load. (Workaround: set the text field to automatically decrypt the next text field by checking "Trigger decryption of another encrypted field").
 
