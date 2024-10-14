@@ -20,7 +20,9 @@
 
 9. Bug! TO: field is only working when there is also a CC field defined. **fixed**
 
-10. Create unit tests.
+10. Bug! TO: and CC: fields fails to collect multiple user IDs. Only the first user ID is being taken.
+
+11. Create unit tests.
 
 *Security coverage requirement*
 
