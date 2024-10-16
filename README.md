@@ -58,7 +58,9 @@
 
 16. Phaseout _proc_get_keys(). Replace it by a trait.
 
-17. Adjust "created" timestamp to "changed" where is is mentioned as such. Example: `proc_recipients_pubkeys_changed' => json_encode($context['created'])` 
+17. Adjust "created" timestamp to "changed" where is is mentioned as such. Example: `proc_recipients_pubkeys_changed' => json_encode($context['created'])`
+
+18. Fix redundancy of `proc_file_entity_max_filesize` and `proc_post_max_size_bytes`
 
 *General improvements*
 
