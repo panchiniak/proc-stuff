@@ -60,8 +60,6 @@
 
 17. Adjust "created" timestamp to "changed" where is is mentioned as such. Example: `proc_recipients_pubkeys_changed' => json_encode($context['created'])`
 
-18. Fix redundancy of `proc_file_entity_max_filesize` and `proc_post_max_size_bytes`
-
 *General improvements*
 
 1.  Improve setMetadataMessage. It has too many arguments. Some can be put toghether as values of an array.
