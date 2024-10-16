@@ -56,6 +56,10 @@
 
 15. Implement .view, .update and .delete operations for checking access. Currently they exist but they are not being used.
 
+16. Phaseout _proc_get_keys(). Replace it by a trait.
+
+17. Adjust "created" timestamp to "changed" where is is mentioned as such. Example: `proc_recipients_pubkeys_changed' => json_encode($context['created'])` 
+
 *General improvements*
 
 1.  Improve setMetadataMessage. It has too many arguments. Some can be put toghether as values of an array.
@@ -110,7 +114,7 @@
 
 9.  Phaseout _proc_common_get_decryption_form_data(). **done**
 
-10.  Create a new route *proc*/update/\<proc-IDs-CSV\> and its ad hoc JS library (based on d7 **proc.update_protected.js**) for performing the re-encryption of the PROCs listed at \<proc-IDs-CSV\> according to the wished lists of recipients in each Proc.
+10.  Create a new route proc/\<proc-IDs-CSV\>/update and its ad hoc JS library (based on d7 **proc.update_protected.js**) for performing the re-encryption of the PROCs listed at \<proc-IDs-CSV\> according to the wished lists of recipients in each Proc. **done**
  
 *For giving back to the Community*
 
