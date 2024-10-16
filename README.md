@@ -60,7 +60,7 @@
 
 17. Adjust "created" timestamp to "changed" where is is mentioned as such. Example: `proc_recipients_pubkeys_changed' => json_encode($context['created'])`
 
-18. Move drupalSettings.proc_field_delta and other settings defined to encryption into the proc scope: `drupalSettings.proc.proc_field_delta` 
+18. Move drupalSettings.proc_field_delta and other settings defined at encryption into the proc scope: `drupalSettings.proc.proc_field_delta` 
 
 *General improvements*
 
