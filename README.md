@@ -96,6 +96,8 @@
 
 16. Merge TO and CC fields in the field widget into a single multivalued field approach, for allowing building up the set of recipients from any number of user reference fields. This could work with a CSV format and validated against the list of existing user reference fields.
 
+17. Replace drupalSettings.proc.baseUrl by drupalSettings.path.baseUrl.
+
 *Re-encryption (encryption update)*
 
 1.  Create a new multivalued field for wished set of recipients. **done**
